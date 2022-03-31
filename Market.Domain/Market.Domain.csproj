@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalogs\DTO\Responses\" />
+    <Folder Include="Catalogs\DTO\Requests\" />
+    <Folder Include="Orders\DTO\Responses\" />
+    <Folder Include="Orders\DTO\Requests\" />
+    <Folder Include="Users\DTO\Responses\" />
+    <Folder Include="Users\DTO\Requests\" />
+  </ItemGroup>
+
+</Project>
