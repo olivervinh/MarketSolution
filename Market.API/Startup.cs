@@ -1,4 +1,5 @@
 using Market.Application.Extensions;
+using Market.Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -59,6 +60,7 @@ namespace Market.API
             {
                 endpoints.MapControllers();
             });
+            DataSeeding.Seed(app);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Market.Domain.Catalogs.Models;
+﻿using Market.Domain.Base;
+using Market.Domain.Catalogs.Models;
 using Market.Domain.Orders.Models;
 using System;
 using System.Collections.Generic;
@@ -9,10 +10,8 @@ using System.Threading.Tasks;
 
 namespace Market.Domain.Users.Models
 {
-    public class User
+    public class User : AuditEntity<int>
     {
-        [Key]
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
@@ -21,7 +20,6 @@ namespace Market.Domain.Users.Models
         public string Password { get; set; }
         public string ImagePath { get; set; }
         public string Role { get; set; }
-        public virtual ICollection<Order> Orders { get; set; }
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }  
     }
 }

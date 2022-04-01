@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Market.Domain.Catalogs.Models
 {
-    public class Product:AuditEntity<short>
+    public class Product:AuditEntity<int>
     {  
         public string Name { get; set; }
         public string Description { get; set; }
@@ -20,13 +20,10 @@ namespace Market.Domain.Catalogs.Models
         public bool IsActive { get; set; }
         public virtual ICollection<ProductImage> ImageProducts { get; set; }
         public int? FkCategoryId { get; set; }
-        [ForeignKey("FkCategoryId")]
+        [ForeignKey(nameof(FkCategoryId))]
         public virtual Category Category { get; set; }
         public int? FkTagId { get; set; }
-        [ForeignKey("FkTagId")]
+        [ForeignKey(nameof(FkTagId))]
         public virtual Tag Tag { get; set; }
-        public int? FkUserId { get; set; }
-        [ForeignKey("FkUserId")]
-        public virtual User User { get; set; }
     }
 }

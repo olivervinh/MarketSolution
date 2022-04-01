@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Market.Domain.Catalogs.Models
 {
-    public class ProductImage:AuditEntity<short>
+    public class ProductImage:AuditEntity<int>
     {    
         public string ImageName { get; set; }
         public bool IsThumbnail { get; set; }
         public int? FkProductId { get; set; }
-        [ForeignKey("FkProductId")]
+        [ForeignKey(nameof(FkProductId))]
         public virtual Product Product { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Market.Domain.Catalogs.Models
 {
-    public class Category : AuditEntity<short>
+    public class Category : AuditEntity<int>
     {
         public string Name { get; set; }  
         public virtual ICollection<Product> Products { get; set; }

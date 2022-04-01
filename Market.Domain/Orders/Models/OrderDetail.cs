@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace Market.Domain.Orders.Models
 {
-    public class OrderDetail : AuditEntity<short>
+    public class OrderDetail : AuditEntity<int>
     {      
         public int Quantity { get; set; }
         public decimal? TotalItemPrice { get; set; }
         public int? FkOrderId { get; set; }
-        [ForeignKey("FkOrderId")]
+        [ForeignKey(nameof(FkOrderId))]
         public virtual Order Order { get; set; }
         public int? FkProductId { get; set; }
-        [ForeignKey("FkProductId")]
+        [ForeignKey(nameof(FkProductId))]
         public virtual Product Product { get; set; }
      
     }
